@@ -520,15 +520,15 @@ section,
     }
   }
 }
+
 .navbar-nav {
-  display: flex !important;
-  flex-direction: row;
+  display: inline-block !important;
   .nav-item {
     display: inline-block;
     a {
       padding: 30px 18px;
       padding-right: 6px;
-      color: $black_more;
+      color: $white;
       cursor: pointer;
       &.active {
         color: $color;
