@@ -8,7 +8,9 @@ const BlogsList = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
-      await axiosInstance.delete(`http://localhost:5000/api/blogs/${id}`);
+      await axiosInstance.delete(
+        `https://mohammedalsolami-backend.onrender.com/api/blogs/${id}`
+      );
       setBlogs(blogs.filter((blog) => blog._id !== id));
     }
   };

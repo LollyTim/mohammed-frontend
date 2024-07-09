@@ -9,7 +9,9 @@ export const clearEditItem = (dispatch) => {
 
 export const fetchData = async (dispatch, type) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/${type}`);
+    const response = await fetch(
+      `https://mohammedalsolami-backend.onrender.com/api/${type}`
+    );
     const data = await response.json();
     dispatch({ type: "FETCH_DATA_SUCCESS", payload: data });
   } catch (error) {
@@ -19,9 +21,12 @@ export const fetchData = async (dispatch, type) => {
 
 export const deleteItem = async (dispatch, type, id) => {
   try {
-    await fetch(`http://localhost:5000/api/${type}/${id}`, {
-      method: "DELETE",
-    });
+    await fetch(
+      `https://mohammedalsolami-backend.onrender.com/api/${type}/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     dispatch({ type: "DELETE_ITEM_SUCCESS", payload: id });
   } catch (error) {
     console.error(error.message);

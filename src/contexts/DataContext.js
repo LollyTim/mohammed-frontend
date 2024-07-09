@@ -12,13 +12,17 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const projectsRes = await axios.get("http://localhost:5000/api/projects");
-      const blogsRes = await axios.get("http://localhost:5000/api/blogs");
+      const projectsRes = await axios.get(
+        "https://mohammedalsolami-backend.onrender.com/api/projects"
+      );
+      const blogsRes = await axios.get(
+        "https://mohammedalsolami-backend.onrender.com/api/blogs"
+      );
       const educationsRes = await axios.get(
-        "http://localhost:5000/api/educations"
+        "https://mohammedalsolami-backend.onrender.com/api/educations"
       );
       const experiencesRes = await axios.get(
-        "http://localhost:5000/api/experiences"
+        "https://mohammedalsolami-backend.onrender.com/api/experiences"
       );
 
       setProjects(projectsRes.data);

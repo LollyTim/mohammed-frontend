@@ -24,11 +24,14 @@ const AddProject = ({ project, onEdit }) => {
     e.preventDefault();
     if (onEdit) {
       await axios.put(
-        `http://localhost:5000/api/projects/${formData._id}`,
+        `https://mohammedalsolami-backend.onrender.com/api/projects/${formData._id}`,
         formData
       );
     } else {
-      await axios.post("http://localhost:5000/api/projects", formData);
+      await axios.post(
+        "https://mohammedalsolami-backend.onrender.com/api/projects",
+        formData
+      );
     }
   };
 
@@ -121,11 +124,14 @@ const AddBlog = ({ blog, onEdit }) => {
     e.preventDefault();
     if (onEdit) {
       await axios.put(
-        `http://localhost:5000/api/blogs/${formData._id}`,
+        `https://mohammedalsolami-backend.onrender.com/api/blogs/${formData._id}`,
         formData
       );
     } else {
-      await axios.post("http://localhost:5000/api/blogs", formData);
+      await axios.post(
+        "https://mohammedalsolami-backend.onrender.com/api/blogs",
+        formData
+      );
     }
   };
 
@@ -190,11 +196,14 @@ const AddEducation = ({ education, onEdit }) => {
     e.preventDefault();
     if (onEdit) {
       await axios.put(
-        `http://localhost:5000/api/educations/${formData._id}`,
+        `https://mohammedalsolami-backend.onrender.com/api/educations/${formData._id}`,
         formData
       );
     } else {
-      await axios.post("http://localhost:5000/api/educations", formData);
+      await axios.post(
+        "https://mohammedalsolami-backend.onrender.com/api/educations",
+        formData
+      );
     }
   };
 
@@ -265,11 +274,14 @@ const AddExperience = ({ experience, onEdit }) => {
     e.preventDefault();
     if (onEdit) {
       await axios.put(
-        `http://localhost:5000/api/experiences/${formData._id}`,
+        `https://mohammedalsolami-backend.onrender.com/api/experiences/${formData._id}`,
         formData
       );
     } else {
-      await axios.post("http://localhost:5000/api/experiences", formData);
+      await axios.post(
+        "https://mohammedalsolami-backend.onrender.com/api/experiences",
+        formData
+      );
     }
   };
 
@@ -330,7 +342,9 @@ const ViewAllData = ({ data, type }) => {
     // Show a confirmation modal before deleting
     const confirm = window.confirm("Are you sure you want to delete?");
     if (confirm) {
-      await axios.delete(`http://localhost:5000/api/${type}/${id}`);
+      await axios.delete(
+        `https://mohammedalsolami-backend.onrender.com/api/${type}/${id}`
+      );
     }
   };
 

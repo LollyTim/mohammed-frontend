@@ -9,7 +9,9 @@ const ProjectsList = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
-      await axiosInstance.delete(`http://localhost:5000/api/projects/${id}`);
+      await axiosInstance.delete(
+        `https://mohammedalsolami-backend.onrender.com/api/projects/${id}`
+      );
       setProjects(projects.filter((project) => project._id !== id));
     }
   };

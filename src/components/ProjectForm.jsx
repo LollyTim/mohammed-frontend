@@ -71,13 +71,13 @@ const ProjectForm = () => {
       let res;
       if (id) {
         res = await axiosInstance.put(
-          `http://localhost:5000/api/projects/${id}`,
+          `https://mohammedalsolami-backend.onrender.com/api/projects/${id}`,
           formData
         );
         setProjects(projects.map((p) => (p._id === id ? res.data : p)));
       } else {
         res = await axiosInstance.post(
-          "http://localhost:5000/api/projects",
+          "https://mohammedalsolami-backend.onrender.com/api/projects",
           formData
         );
         setProjects([...projects, res.data]);

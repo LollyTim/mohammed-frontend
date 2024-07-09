@@ -24,19 +24,19 @@ const Dashboard = () => {
     const token = localStorage.getItem("token");
     const config = { headers: { Authorization: `Bearer ${token}` } };
     const projectsData = await axios.get(
-      "http://localhost:5000/api/projects",
+      "https://mohammedalsolami-backend.onrender.com/api/projects",
       config
     );
     const blogsData = await axios.get(
-      "http://localhost:5000/api/blogs",
+      "https://mohammedalsolami-backend.onrender.com/api/blogs",
       config
     );
     const educationsData = await axios.get(
-      "http://localhost:5000/api/educations",
+      "https://mohammedalsolami-backend.onrender.com/api/educations",
       config
     );
     const experiencesData = await axios.get(
-      "http://localhost:5000/api/experiences",
+      "https://mohammedalsolami-backend.onrender.com/api/experiences",
       config
     );
 
@@ -71,7 +71,10 @@ const Dashboard = () => {
       try {
         const token = localStorage.getItem("token");
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        await axios.delete(`http://localhost:5000/api/${type}s/${id}`, config);
+        await axios.delete(
+          `https://mohammedalsolami-backend.onrender.com/api/${type}s/${id}`,
+          config
+        );
         fetchAllData();
       } catch (error) {
         console.error("Error deleting item", error);

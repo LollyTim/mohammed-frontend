@@ -36,7 +36,7 @@ const Blog = function () {
   useEffect(() => {
     // Fetch blog posts data from API
     axios
-      .get("http://localhost:5000/api/blogs/") // Replace with your API endpoint
+      .get("https://mohammedalsolami-backend.onrender.com/api/blogs/") // Replace with your API endpoint
       .then((response) => {
         console.log("Blog posts data fetched:", response.data); // Debugging log
         setBlogPosts(response.data);
@@ -50,7 +50,7 @@ const Blog = function () {
     console.log("Blog ID clicked:", id); // Debugging log to check the id
     // Fetch specific blog post by ID from API
     axios
-      .get(`http://localhost:5000/api/blogs/${id}`) // Replace with your API endpoint
+      .get(`https://mohammedalsolami-backend.onrender.com/api/blogs/${id}`) // Replace with your API endpoint
       .then((response) => {
         console.log("Blog post data fetched:", response.data); // Debugging log
         setSelectedBlog(response.data);

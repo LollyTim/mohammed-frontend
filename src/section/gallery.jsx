@@ -30,7 +30,7 @@ const Gallery = function () {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/projects")
+      .get("https://mohammedalsolami-backend.onrender.com/api/projects")
       .then((response) => {
         setProjects(response.data);
       })
@@ -41,7 +41,7 @@ const Gallery = function () {
 
   const handleProjectClick = (_id) => {
     axios
-      .get(`http://localhost:5000/api/projects/${_id}`)
+      .get(`https://mohammedalsolami-backend.onrender.com/api/projects/${_id}`)
       .then((response) => {
         setSelectedProject(response.data);
         setLightboxOpen(true);
